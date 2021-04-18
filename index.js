@@ -2,10 +2,8 @@ const express = require('express');
 const reservations = require('./routes/reservations.routes.js');
 const app = express();
 
-const PORT = 3000;
-
 const mongoose = require('mongoose');
-const db_url = 'mongodb://admin:1234@localhost:27017/admin';
+const db_url = process.env.MONGODB_URL || 'mongodb://admin:1234@localhost:27017/admin';
 const mongoDB = db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
@@ -18,6 +16,8 @@ app.use(express.urlencoded({
 }));
 
 app.use('/api', reservations);
+
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server started at http://localhost:${PORT}`)
