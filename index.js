@@ -1,4 +1,3 @@
-require('dotenv').config();
 const express = require('express');
 const reservations = require('./routes/reservations.routes.js');
 const app = express();
