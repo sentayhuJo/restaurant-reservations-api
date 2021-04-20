@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const reservation_controller = require('../controllers/reservations.controller');
+const controller = require('../controllers/reservations.controller');
 
 router
     .route('/reservations')
-    .get(reservation_controller.reservation_all)
-    .post(reservation_controller.reservation_create);
+    .get(controller.reservationAll)
+    .post(controller.reservationCreate);
 
 router
     .route('/reservations/:id')
-    .get(reservation_controller.reservation_findOne);
+    .get(controller.reservationFindOne);
 
 module.exports = router;    

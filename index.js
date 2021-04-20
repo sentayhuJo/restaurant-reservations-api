@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const reservations = require('./routes/reservations.routes.js');
 const app = express();
 
@@ -10,6 +11,7 @@ mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({
     extended: false

@@ -1,14 +1,14 @@
 const Reservation = require('../models/reservations.model');
 
 
-exports.reservation_all = (req, res, next) => {
+exports.reservationAll = (req, res, next) => {
     Reservation.find((err, reservation) => {
         if (err) return next(err);
         res.send(reservation);
     })
 };
 
-exports.reservation_create = (req, res, next) => {
+exports.reservationCreate = (req, res, next) => {
     let reservation = new Reservation(
         {
             name: req.body.name,
@@ -25,7 +25,7 @@ exports.reservation_create = (req, res, next) => {
     });
 };
 
-exports.reservation_findOne = (req, res, next) => {
+exports.reservationFindOne = (req, res, next) => {
     Reservation.findById(req.params.id, (err, reservation) => {
         if (err) return next(err);
         res.send(reservation);
