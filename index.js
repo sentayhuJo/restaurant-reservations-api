@@ -19,7 +19,7 @@ app.use(express.urlencoded({
 
 app.use('/api', reservations);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server started at PORT:${PORT}`)
