@@ -1,2 +1,24 @@
-# restaurant-reservations-api
-Restaurant reservations API
+# Restaurant-reservations-api
+  API for Restaurant reservations.
+
+  The API provides REST routes for accessing the data.
+
+## Requirements
+  1. Heroku
+  2. MONGODB Atlas
+  3. Node.js ^v8.14.0
+
+## Getting Started
+  1. Install required packages:
+      ```
+       npm install
+      ```
+  2. Then start:
+      ```
+      npm start
+      ```
+      
+ ### Database
+  The database is configuration is MONGODB_URL variable in the .env file
+  
+  Restaurant-reservations-api runs on http://localhost:3000
